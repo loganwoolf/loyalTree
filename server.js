@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const PORT = 3009; // Client will be 3000
+const PORT = process.env.PORT
 const express = require("express");
 
 // middleware
