@@ -14,7 +14,7 @@ function StoreListItem(props) {
   let navigate = useNavigate();
   const context = useContext(LoggedInUser);
   const params = useParams();
-  const { storeID, storeName, description, address, category, photo, detail } =
+  const { storeID, storeName, description, category, photo, detail } =
     props;
 
   const [card, setCard] = useState(false);
@@ -40,7 +40,7 @@ function StoreListItem(props) {
         setTimeout(() => {
           setText("Thanks KV!!!");
           setTimeout(() => {
-            window.location = "/cards";
+            navigate("/cards");
           }, 1000);
         }, 1000);
       })
@@ -62,7 +62,7 @@ function StoreListItem(props) {
         setTimeout(() => {
           setText("Thanks KV!!!");
           setTimeout(() => {
-            window.location = "/cards";
+            navigate("/cards");
           }, 1000);
         }, 1000);
       })

@@ -1,11 +1,10 @@
 import "../components/GiftCardListItem.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import CodeView from "../components/CodeView";
 import Button from "../components/Button";
 import CreditCard from "../components/CreditCard";
 import axios from "axios";
-import LoggedInUser from "../context/AuthContext";
 
 import GiftCardListItem from "../components/GiftCardListItem";
 
@@ -31,7 +30,6 @@ const SingleGiftCard = (props) => {
   const [text, setText] = useState("Place Order");
   const [qrCode, setQrCode] = useState(false);
   const [transferForm, showTransferForm] = useState();
-  const context = useContext(LoggedInUser);
   let navigate = useNavigate();
 
   // const formatter = new Intl.NumberFormat("en-US", {
@@ -53,8 +51,7 @@ const SingleGiftCard = (props) => {
         setTimeout(() => {
           setText("Thanks KV!!!");
           setTimeout(() => {
-            window.location = "/cards";
-            // navigate("/cards");
+            navigate("/cards");
           }, 1000);
         }, 1000);
       })
