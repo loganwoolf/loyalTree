@@ -9,7 +9,7 @@ const StoreDetails = (props) => {
 
   // not working, backend not ready
   useEffect(() => {
-    axios.get(`/stores/${params.id}`).then((res) => {
+    axios.get(`/v1/stores/${params.id}`).then((res) => {
       setStore(res.data.data[0]);
     });
   }, [params.id]);

@@ -14,7 +14,7 @@ function StoreListItem(props) {
   let navigate = useNavigate();
   const context = useContext(LoggedInUser);
   const params = useParams();
-  const { storeID, storeName, description, address, category, photo, detail } =
+  const { storeID, storeName, description, category, photo, detail } =
     props;
 
   const [card, setCard] = useState(false);
@@ -29,7 +29,7 @@ function StoreListItem(props) {
   const onPay = (email, amount) => {
     // const id = context.userID;
     axios
-      .post(`/cards/${params.id}`, {
+      .post(`/v1/cards/${params.id}`, {
         email,
         amount: amount,
         // user_id: ${id,
@@ -40,7 +40,7 @@ function StoreListItem(props) {
         setTimeout(() => {
           setText("Thanks KV!!!");
           setTimeout(() => {
-            window.location = "/cards";
+            navigate("/cards");
           }, 1000);
         }, 1000);
       })
@@ -50,7 +50,7 @@ function StoreListItem(props) {
   const onRedeem = (email, amount) => {
     const id = context.userID;
     axios
-      .post(`/stores/${params.id}/redeem/`, {
+      .post(`/v1/stores/${params.id}/redeem/`, {
         email,
         amount: amount,
         user_id: id,
@@ -62,7 +62,7 @@ function StoreListItem(props) {
         setTimeout(() => {
           setText("Thanks KV!!!");
           setTimeout(() => {
-            window.location = "/cards";
+            navigate("/cards");
           }, 1000);
         }, 1000);
       })

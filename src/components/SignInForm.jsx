@@ -18,7 +18,7 @@ const SignInForm = (props) => {
     e.preventDefault();
     if (email && password) {
       axios
-        .post("/login", { email, password })
+        .post("/v1/login", { email, password })
         .then((res) => {
           cookies.set("id", res.data.user.id, { path: "/" });
           context.user = res.data.user;
@@ -37,7 +37,7 @@ const SignInForm = (props) => {
   const loginBill = (e) => {
     e.preventDefault();
       axios
-        .post("/login", { email: 'bill@example.com', password: 'password' })
+        .post("/v1/login", { email: 'bill@example.com', password: 'password' })
         .then((res) => {
           cookies.set("id", res.data.user.id, { path: "/" });
           context.user = res.data.user;
@@ -55,7 +55,7 @@ const SignInForm = (props) => {
   const loginChris = (e) => {
     e.preventDefault();
       axios
-        .post("/login", { email: 'chris@example.com', password: 'password' })
+        .post("/v1/login", { email: 'chris@example.com', password: 'password' })
         .then((res) => {
           cookies.set("id", res.data.user.id, { path: "/" });
           context.user = res.data.user;

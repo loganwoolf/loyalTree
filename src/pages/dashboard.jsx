@@ -13,8 +13,8 @@ const Dashboard = (props) => {
   const [view, setView] = useState({ redeem: false, transactions: false });
 
   useEffect(() => {
-    const promiseOne = axios.get("/dashboard");
-    const promiseTwo = axios.get("/dashboard/transactions");
+    const promiseOne = axios.get("/v1/dashboard");
+    const promiseTwo = axios.get("/v1/dashboard/transactions");
     Promise.all([promiseOne, promiseTwo]).then((values) => {
       setStoreInfo(values[0].data);
       setTransactions(values[1].data.data);
