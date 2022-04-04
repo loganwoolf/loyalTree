@@ -26,7 +26,7 @@ const Scanner = (props) => {
       cancelScan();
       setCardID(result);
       axios
-        .get("/dashboard/redeem", { params: { cardID: result } })
+        .get("/v1/dashboard/redeem", { params: { cardID: result } })
         .then((response) => {
           return response.data.error
             ? setError(response.data.error)
@@ -55,7 +55,7 @@ const Scanner = (props) => {
 
   const acceptTransaction = () => {
     axios
-      .post("/dashboard/redeem", {
+      .post("/v1/dashboard/redeem", {
         cardID,
         transAmt,
         cardAmt,

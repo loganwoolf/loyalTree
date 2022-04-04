@@ -42,7 +42,7 @@ const SingleGiftCard = (props) => {
   const onPay = (email, amount) => {
     const id = params.id;
     axios
-      .put(`/cards/${id}/topup`, {
+      .put(`/v1/cards/${id}/topup`, {
         email,
         amount: amount,
         user_id: id,

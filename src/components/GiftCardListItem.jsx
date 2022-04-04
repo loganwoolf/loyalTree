@@ -20,7 +20,7 @@ function GiftCardListItem(props) {
 
   const getCard = (id) => {
     axios
-      .get(`/cards/${gift_card_id}`)
+      .get(`/v1/cards/${gift_card_id}`)
       .then((res) => {
         //navigates to card to show single card how to pass data?
         navigate(`/cards/${gift_card_id}`, {

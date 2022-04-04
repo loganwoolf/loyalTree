@@ -4,11 +4,11 @@ const router = express.Router();
 const { USER } = require("../querys");
 
 module.exports = (db) => {
-  const cardRoutes = require("./routes/cards");
+  const cardRoutes = require("./cards");
   router.use("/cards", cardRoutes(db));
-  const dashboardRoutes = require("./routes/dashboard");
+  const dashboardRoutes = require("./dashboard");
   router.use("/dashboard", dashboardRoutes(db));
-  const storeRoutes = require("./routes/stores");
+  const storeRoutes = require("./stores");
   router.use("/stores", storeRoutes(db));
 
   router.get("/user", (req, res) => {

@@ -9,7 +9,7 @@ const CardTransactions = (props) => {
 
   useEffect(() => {
     axios
-      .get(`/cards/${props.cardID}/transactions`)
+      .get(`/v1/cards/${props.cardID}/transactions`)
       .then((response) => setTransactions(response.data));
   }, [props.cardID]);
 
