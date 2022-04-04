@@ -21,7 +21,7 @@ export default function Sidebar(props) {
 
   useEffect(() => {
     if (props.user) {
-      axios.get("/user").then((res) => {
+      axios.get("/v1/user").then((res) => {
         const currentUser = res.data.user;
         setUser(...currentUser);
       });

@@ -29,7 +29,7 @@ function App() {
     context.user = {};
     localStorage.clear();
 
-    axios.post("/logout");
+    axios.post("/v1/logout");
 
     return navigate("/");
   };

@@ -64,7 +64,7 @@ const SingleGiftCard = (props) => {
 
   const onTransfer = (email, amount) => {
     const id = params.id;
-    axios.put(`/cards/${id}`, { amount, email }).then((res) => {
+    axios.put(`/v1/cards/${id}`, { amount, email }).then((res) => {
       setText("Processing");
       setTimeout(() => {
         setText("Thanks KV!!!");

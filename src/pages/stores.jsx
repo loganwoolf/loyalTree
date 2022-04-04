@@ -8,7 +8,7 @@ const Stores = (props) => {
   const [stores, setStores] = useState([]);
   const [detail, showDetail] = useState("");
   useEffect(() => {
-    axios.get("/stores").then((res) => {
+    axios.get("/v1/stores").then((res) => {
       setStores(res.data.data);
     });
   }, []);
